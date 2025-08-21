@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sevgilime Özel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(120deg, #f8b6d2 0%, #fceabb 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #d72660;
+      margin-bottom: 16px;
+    }
+    #message {
+      font-size: 1.2em;
+      margin: 32px 0 16px 0;
+      color: #444;
+      min-height: 48px;
+      transition: all 0.3s;
+    }
+    button {
+      background: #d72660;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #f46036;
+    }
+    .footer {
+      margin-top: 24px;
+      font-size: 0.95em;
+      color: #b8860b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sevgili <span id="lovedOne"></span> 💖</h1>
+    <div id="message">Sana bir şey söylemek istiyorum...</div>
+    <button onclick="showRandomMessage()">Bir Mesaj Göster</button>
+    <div class="footer">Sevgiyle, <span id="yourName"></span></div>
+  </div>
+  <script>
+    const LOVED_ONES_NAME = "Sevgilim";
+    const YOUR_NAME = "Buğra";
+    const TYPE_LINES = [
+      "Seni kelimelerden daha çok seviyorum.",
+      "Kalbim, senin adını ezberledi.",
+      "İyi ki varsın. 💖"
+    ];
+
+    document.getElementById('lovedOne').textContent = LOVED_ONES_NAME;
+    document.getElementById('yourName').textContent = YOUR_NAME;
+
+    function showRandomMessage() {
+      const randomIndex = Math.floor(Math.random() * TYPE_LINES.length);
+      document.getElementById('message').textContent = TYPE_LINES[randomIndex];
+    }
+  </script>
+</body>
+</html>
